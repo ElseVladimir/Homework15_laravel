@@ -6,12 +6,13 @@
     <p>
         <a href="#" class="btn btn-primary my-2">Main call to action</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        <a href="pages/create" class="btn btn-success">Create new page</a>
     </p>
 @endsection
 
 
 @section('content')
-    @foreach($pageAll as $pAll)
+    @foreach($pages as $page)
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
@@ -21,11 +22,16 @@
                     <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
                 </svg>
                 <div class="card-body">
-                    <p class="card-text"> {{ $pAll->title }} </p>
+                    <p class="card-text"> {{ $page->title }} </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            <a href="pages/{{ $page->id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a href="pages/{{ $page->id }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <form method="post" action="/homework15/public/pages/{{ $page->id }}">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                            </form>
                         </div>
                         <small class="text-muted">9 mins</small>
                     </div>

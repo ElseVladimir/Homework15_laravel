@@ -6,6 +6,7 @@
     <p>
         <a href="#" class="btn btn-primary my-2">Main call to action</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        <a href="products/create" class="btn btn-success">Create new products</a>
     </p>
 @endsection
 
@@ -24,8 +25,13 @@
                 <p class="card-text"> {{ $prodAll->title }} </p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <a href="products/{{ $prodAll->id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                        <a href="products/{{ $prodAll->id }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <form method="post" action="/homework15/public/products/{{ $prodAll->id }}">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                        </form>
                     </div>
                     <small class="text-muted">9 mins</small>
                 </div>

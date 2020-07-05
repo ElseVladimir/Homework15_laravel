@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/products',"ProductsController@index");
-Route::get('/pages','PagesController@index');
+/*Route::get('/products',"ProductsController@index");
+Route::get('/products/create', "ProductsController@create");
+Route::get('/products/{id}',"ProductsController@show");
+Route::post('/products', "ProductsController@store");
+Route::get('/products/{id}/edit',"ProductsController@edit");
+Route::put('/products/{id}', 'ProductsController@update');
+Route::delete('/products/{$id}','ProductsController@destroy');*/
+Route::resource('products', 'ProductsController');
+
+Route::resource('pages','PagesController');
+
 Route::get('/orders','OrdersController@index');
