@@ -6,12 +6,13 @@
     <p>
         <a href="#" class="btn btn-primary my-2">Main call to action</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        <a href="orders/create" class="btn btn-success">Create new order</a>
     </p>
 @endsection
 
 
 @section('content')
-    @foreach($ordersAll as $oAll)
+    @foreach($orders as $order)
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
@@ -21,11 +22,16 @@
                     <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
                 </svg>
                 <div class="card-body">
-                    <p class="card-text"> {{ $oAll->customer_name }} </p>
+                    <p class="card-text"> {{ $order->customer_name }} </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            <a href="orders/{{ $order->id }}" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a href="orders/{{ $order->id }}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <form method="post" action="/homework15/public/orders/{{ $order->id }}">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                            </form>
                         </div>
                         <small class="text-muted">9 mins</small>
                     </div>

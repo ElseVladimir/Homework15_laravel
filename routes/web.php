@@ -24,4 +24,4 @@ Route::resource('products', 'ProductsController');
 
 Route::resource('pages','PagesController');
 
-Route::get('/orders','OrdersController@index');
+Route::resource('orders','OrdersController');
