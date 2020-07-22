@@ -6,7 +6,7 @@
     <p>
         <a href="#" class="btn btn-primary my-2">Main call to action</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        <a href="pages/create" class="btn btn-success">Create new page</a>
+        <a href="/pages/create" class="btn btn-success">Create new page</a>
     </p>
 @endsection
 
@@ -25,9 +25,9 @@
                     <p class="card-text"> {{ $page->title }} </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="pages/{{ $page->id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                            <a href="pages/{{ $page->id }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
-                            <form method="post" action="/homework15/public/pages/{{ $page->id }}">
+                            <a href="/pages/{{ $page->id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a href="/pages/{{ $page->id }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <form method="post" action="/pages/{{ $page->id }}">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-sm btn-outline-secondary">Delete</button>

@@ -25,9 +25,9 @@
                 <p class="card-text"> {{ $prodAll->title }} </p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <a href="products/{{ $prodAll->id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                        <a href="products/{{ $prodAll->id }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
-                        <form method="post" action="/homework15/public/products/{{ $prodAll->id }}">
+                        <a href="/products/{{ $prodAll->id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                        <a href="/products/{{ $prodAll->id }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <form method="post" action="/products/{{ $prodAll->id }}">
                             @csrf
                             @method('delete')
                             <button class="btn btn-sm btn-outline-secondary">Delete</button>
