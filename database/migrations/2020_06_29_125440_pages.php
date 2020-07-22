@@ -31,4 +31,5 @@ class Pages extends Migration
     {
         Schema::dropIfExists('pages');
     }
+    //
 }
