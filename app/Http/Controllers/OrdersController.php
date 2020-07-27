@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
+use App\Http\Requests\Order\StoreOrderRequest;
+use App\Http\Requests\Order\UpdateOrderRequest;
 
 class OrdersController extends Controller
 {
@@ -33,14 +35,14 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreOrderRequest $request)
     {
-        $this->validate($request,[
+        /* $this->validate($request,[
             'customer_name' => 'required|min:10|max:40',
             'email' => 'required|min:5',
             'phone' => 'required|min:10',
             'feedback' => 'required|min:10'
-        ]);
+        ]); */
         Order::create($request->all());
         return redirect('/orders');
     }
@@ -51,10 +53,10 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        $page = Order::find($id);
-        return view('orders.show')->with(compact('page'));
+        /* $page = Order::find($id); */
+        return view('orders.show')->with(compact('order'));
     }
 
     /**
@@ -63,9 +65,9 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Order $order)
     {
-        $order = Order::find($id);
+        /* $order = Order::find($id); */
         return view('orders.edit')->with(compact('order'));
     }
 
@@ -76,9 +78,9 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Order $order, UpdateOrderRequest $request)
     {
-        $order = Order::find($id);
+        /* $order = Order::find($id); */
         $order->update($request->all());
         return redirect('/orders');
     }
@@ -89,9 +91,9 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Order $order)
     {
-        $order = Order::find($id);
+        /* $order = Order::find($id); */
         $order->delete();
         return redirect('/orders');
     }

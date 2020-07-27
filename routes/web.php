@@ -25,3 +25,5 @@ Route::resource('products', 'ProductsController');
 Route::resource('pages','PagesController');
 
 Route::resource('orders','OrdersController');
+
+Route::resource('categories', 'CategoriesController');

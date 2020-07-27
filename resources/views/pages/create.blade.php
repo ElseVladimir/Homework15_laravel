@@ -7,7 +7,7 @@
 @section('content')
     <div class="col-md-6">
         @include('partials.errors')
-        <form method="post" action="/homework15/public/pages">
+        <form method="post" action="/pages">
 
             @csrf
 

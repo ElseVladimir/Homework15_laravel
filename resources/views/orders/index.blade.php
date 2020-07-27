@@ -6,7 +6,7 @@
     <p>
         <a href="#" class="btn btn-primary my-2">Main call to action</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        <a href="orders/create" class="btn btn-success">Create new order</a>
+        <a href="/orders/create" class="btn btn-success">Create new order</a>
     </p>
 @endsection
 
@@ -25,9 +25,9 @@
                     <p class="card-text"> {{ $order->customer_name }} </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="orders/{{ $order->id }}" class="btn btn-sm btn-outline-secondary">View</a>
-                            <a href="orders/{{ $order->id }}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
-                            <form method="post" action="/homework15/public/orders/{{ $order->id }}">
+                            <a href="/orders/{{ $order->id }}" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a href="/orders/{{ $order->id }}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <form method="post" action="/orders/{{ $order->id }}">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-sm btn-outline-secondary">Delete</button>

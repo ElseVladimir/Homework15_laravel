@@ -7,9 +7,16 @@
 @section('content')
     <div class="col-md-6">
         @include('partials.errors')
-        <form method="post" action="/homework15/public/products">
+        <form method="post" action="/products">
 
             @csrf
+
+            <label for="categoryList">Categories</label>
+            <select multiple class="form-control" name="categorie_id">
+                @foreach($category as $cat)
+                <option id="categorie_id" value="{{ $cat->id }}">{{ $cat->categories }}</option>
+                @endforeach
+            </select><br>
 
             <div class="form-group">
                 <label for="Title">Title:</label>

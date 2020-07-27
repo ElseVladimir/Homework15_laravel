@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Page;
 use Illuminate\Http\Request;
+use App\Http\Requests\Page\StorePageRequest;
+use App\Http\Requests\Page\UpdatePageRequest;
+
 
 class PagesController extends Controller
 {
@@ -33,14 +36,14 @@ class PagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePageRequest $request)
     {
-        $this->validate($request,[
+        /*$this->validate($request,[
             'title' => 'required|min:3|max:20',
             'slug' => 'required|min:3|max:20',
             'intro' => 'required|min:3|max:20',
             'content' => 'required|min:5'
-        ]);
+        ]);*/
         Page::create($request->all());
         return redirect('/pages');
     }
@@ -51,9 +54,9 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Page $page)
     {
-        $page = Page::find($id);
+        /*$page = Page::find($id);*/
         return view('pages.show')->with(compact('page'));
     }
 
@@ -63,9 +66,9 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Page $page)
     {
-        $page = Page::find($id);
+        /*$page = Page::find($id);*/
         return view('pages.edit')->with(compact('page'));
     }
 
@@ -76,9 +79,9 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Page $page, UpdatePageRequest $request /* $id */)
     {
-        $page = Page::find($id);
+        /*$page = Page::find($id);*/
         $page->update($request->all());
         return redirect('/pages');
     }
@@ -89,9 +92,9 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Page $page /* $id */)
     {
-        $page = Page::find($id);
+        /* $page = Page::find($id); */
         $page->delete();
         return redirect('/pages');
     }

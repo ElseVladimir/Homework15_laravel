@@ -6,6 +6,7 @@
 
 @section('content')
     <div class="col-md-4">
+        <p>{{ $page->intro }}</p>
         <p>{{ $page->content }}</p>
     </div>
 @endsection

@@ -9,7 +9,7 @@
 
         @include('partials.errors')
 
-        <form method="post" action="/homework15/public/orders/{{ $order->id }}">
+        <form method="post" action="/orders/{{ $order->id }}">
             @csrf
             @method('PUT')
             <div class="form-group">

@@ -1,33 +1,34 @@
 @extends('layout.base')
 @section('jumbotron')
+    @if(Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+        </div>
+    @endif
     <h1>Album example</h1>
     <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
         etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
     <p>
         <a href="#" class="btn btn-primary my-2">Main call to action</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        <a href="/pages/create" class="btn btn-success">Create new page</a>
+        <a href="/categories/create" class="btn btn-success">Create new categorie</a>
     </p>
 @endsection
 
 
 @section('content')
-    @foreach($pages as $page)
-        <div class="col-md-4">
+
+    @foreach($categories as $category)
+        <div class="col-md-12">
             <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                     role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c"/>
-                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                </svg>
+
                 <div class="card-body">
-                    <p class="card-text"> {{ $page->title }} </p>
+                    <p class="card-text"> {{ $category->categories }} </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="/pages/{{ $page->slug }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                            <a href="/pages/{{ $page->slug }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
-                            <form method="post" action="/pages/{{ $page->slug }}">
+                            <a href="/categories/{{ $category->slug }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a href="/categories/{{ $category->slug }}/edit" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <form method="post" action="/categories/{{ $category->slug }}">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-sm btn-outline-secondary">Delete</button>

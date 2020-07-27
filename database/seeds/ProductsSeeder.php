@@ -14,28 +14,32 @@ class ProductsSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                'title' => 'smth title1',
-                'slug' => 'slug_1',
-                'price' => '1351',
-                'description' => 'smth description1'
+                'title' => 'notebook1',
+                'categorie_id' => '3',
+                'slug' => 'notebook_1',
+                'price' => '100',
+                'description' => 'notebook with 100500 cores processor and 256mb RAM'
             ],
             [
-                'title' => 'smth title2',
-                'slug' => 'slug_2',
-                'price' => '13451',
-                'description' => 'smth description2'
+                'title' => 'super computer',
+                'categorie_id' => '2',
+                'slug' => 'best_pc',
+                'price' => '100500',
+                'description' => 'super computer for NASA researchers'
             ],
             [
-                'title' => 'smth title3',
-                'slug' => 'slug_3',
-                'price' => '12341',
-                'description' => 'smth description3'
+                'title' => 'china smartphone',
+                'categorie_id' => '1',
+                'slug' => 'china_smart',
+                'price' => '50',
+                'description' => 'best bomj china smartphone'
             ],
             [
-                'title' => 'smth title4',
-                'slug' => 'slug_4',
-                'price' => '123113',
-                'description' => 'smth description4'
+                'title' => 'jbm speaker',
+                'categorie_id' => '4',
+                'slug' => 'jbm',
+                'price' => '100',
+                'description' => 'superbass'
             ]
         ]);
     }
