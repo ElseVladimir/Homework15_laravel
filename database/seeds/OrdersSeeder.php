@@ -14,31 +14,31 @@ class OrdersSeeder extends Seeder
     {
         DB::table('orders')->insert([
             [
-              'customer_name' => 'smth name1',
+              'customer_name' => 'order1',
                 'email' => 'smt email1',
                 'phone' => 132414,
                 'feedback' => 'smth feedback1'
             ],
             [
-                'customer_name' => 'smth name2',
+                'customer_name' => 'order2',
                 'email' => 'smt email2',
                 'phone' => 132414,
                 'feedback' => 'smth feedback2'
             ],
             [
-                'customer_name' => 'smth name3',
+                'customer_name' => 'order3',
                 'email' => 'smt email3',
                 'phone' => 132414,
                 'feedback' => 'smth feedback3'
             ],
             [
-                'customer_name' => 'smth name4',
+                'customer_name' => 'order4',
                 'email' => 'smt email4',
                 'phone' => 132414,
                 'feedback' => 'smth feedback4'
             ],
             [
-                'customer_name' => 'smth name5',
+                'customer_name' => 'order5',
                 'email' => 'smt email5',
                 'phone' => 132414,
                 'feedback' => 'smth feedback5'

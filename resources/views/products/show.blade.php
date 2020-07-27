@@ -7,6 +7,7 @@
 
     @section('content')
         <div class="col-md-12">
-            <p>{{ $product->description }}</p>
+            <h3>Price:{{ $product->price }}</h3>
+            <h3>Description:{{ $product->description }}</h3>
         </div>
     @endsection

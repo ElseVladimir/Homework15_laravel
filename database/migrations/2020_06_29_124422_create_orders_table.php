@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Pages extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class Pages extends Migration
      */
     public function up()
     {
-        Schema::create('pages',function (Blueprint $table){
+        Schema::create('orders',function (Blueprint $table){
             $table->id();
-            $table->string('title');
-            $table->string('slug');
-            $table->string('intro');
-            $table->text('content');
+            $table->string('customer_name');
+            $table->string('email');
+            $table->integer('phone');
+            $table->text('feedback');
         });
     }
 
@@ -29,6 +29,6 @@ class Pages extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('orders');
     }
 }

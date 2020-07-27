@@ -14,25 +14,25 @@ class PagesSeeder extends Seeder
     {
         DB::table('pages')->insert([
             [
-                'title' => 'smt title',
+                'title' => 'smt title1',
                 'slug' => 'slug1',
                 'intro' => 'smth intro1',
                 'content' => 'smth content'
             ],
             [
-                'title' => 'smt title',
+                'title' => 'smt title2',
                 'slug' => 'slug2',
                 'intro' => 'smth intro2',
                 'content' => 'smth content'
             ],
             [
-                'title' => 'smt title',
+                'title' => 'smt title3',
                 'slug' => 'slug3',
                 'intro' => 'smth intro3',
                 'content' => 'smth content'
             ],
             [
-                'title' => 'smt title',
+                'title' => 'smt title4',
                 'slug' => 'slug4',
                 'intro' => 'smth intro4',
                 'content' => 'smth content'
